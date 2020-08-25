@@ -24,6 +24,7 @@
               "src/assets"
             ],
             "styles": [
+              "src/custom-theme.scss",
               "src/styles.css"
             ],
             "scripts": []
@@ -119,6 +120,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "base-ng"
+    }
+  },
+  "defaultProject": "base-ng",
+  "cli": {
+    "analytics": "16f5e028-b476-46bf-a21e-d57415aaa28c"
+  }
 }

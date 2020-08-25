@@ -1,0 +1,38 @@
+<div class="example-container">
+  <form #form="ngForm" (ngSubmit)="login()">
+    <mat-form-field appearance="outline">
+      <mat-label>E-mail</mat-label>
+      <input
+        type="email"
+        matInput
+        placeholder="email@exemplo.com.br"
+        [(ngModel)]="user.email"
+        id="inputEmail"
+        #email="ngModel"
+        name="email"
+        email
+        required
+      >
+      <mat-icon matSuffix>person</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Senha</mat-label>
+      <input
+        type="password"
+        matInput
+        #password="ngModel"
+        placeholder="Insira sua senha"
+        [(ngModel)]="user.password"
+        name="password"
+        id="inputPassword"
+        required
+      >
+      <mat-icon matSuffix>https</mat-icon>
+    </mat-form-field>
+
+    <button [disabled]="!form.valid" mat-raised-button color="primary" type="submit">
+      Entrar <mat-icon matSuffix>login</mat-icon>
+    </button>
+  </form>
+</div>

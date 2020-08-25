@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { SharedService } from './services/shared.service';
+import { Component, EventEmitter } from '@angular/core';
+import { UserService } from './services/user.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'base-ng';
+
+  showTemplate = false;
+  public shared: SharedService;
+
+  constructor(private userService: UserService){
+    this.shared = SharedService.getInstance();
+  }
+
+  ngOnInit() {
+    this.shared.showTemplate.subscribe(
+      show => this.showTemplate = show
+    );
+  }
 }
